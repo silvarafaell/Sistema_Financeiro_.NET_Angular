@@ -1,0 +1,12 @@
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\bin\Debug\net7.0\Domain.deps.json
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\bin\Debug\net7.0\Domain.dll
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\bin\Debug\net7.0\Domain.pdb
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\obj\Debug\net7.0\Domain.AssemblyInfoInputs.cache
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\obj\Debug\net7.0\Domain.AssemblyInfo.cs
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\obj\Debug\net7.0\Domain.csproj.CoreCompileInputs.cache
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\obj\Debug\net7.0\Domain.dll
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\obj\Debug\net7.0\refint\Domain.dll
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\obj\Debug\net7.0\Domain.pdb
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Domain\obj\Debug\net7.0\ref\Domain.dll

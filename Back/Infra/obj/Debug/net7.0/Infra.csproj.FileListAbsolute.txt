@@ -1,0 +1,12 @@
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\bin\Debug\net7.0\Infra.deps.json
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\bin\Debug\net7.0\Infra.dll
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\bin\Debug\net7.0\Infra.pdb
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\obj\Debug\net7.0\Infra.csproj.AssemblyReference.cache
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\obj\Debug\net7.0\Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\obj\Debug\net7.0\Infra.AssemblyInfoInputs.cache
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\obj\Debug\net7.0\Infra.AssemblyInfo.cs
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\obj\Debug\net7.0\Infra.csproj.CoreCompileInputs.cache
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\obj\Debug\net7.0\Infra.dll
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\obj\Debug\net7.0\refint\Infra.dll
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\obj\Debug\net7.0\Infra.pdb
+C:\Projetos\Sistema_Financeiro_.NET_Angular\Back\Infra\obj\Debug\net7.0\ref\Infra.dll
