@@ -32,7 +32,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Projetos\\Sistema_Financeiro_.NET_Angular\\Back\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Projetos\\Sistema_Financeiro_.NET_Angular\\Back\\Entities\\Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
