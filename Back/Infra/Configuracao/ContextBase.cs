@@ -36,7 +36,7 @@ namespace Infra.Configuracao
         private string GetStringConectionConfig()
         {
             // ambiene  de desenvolvimento
-            var strCon = "Data Source=DESKTOP-FLR1ARP;Initial Catalog=FINANCEIRO;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
+            var strCon = "Data Source=DESKTOP-UUN8M9T\\SQLEXPRESS;Initial Catalog=FINANCEIRO;Integrated Security=False;User ID=sa;Password=1234;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False";
 
             return strCon;
 
