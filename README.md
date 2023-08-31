@@ -8,3 +8,7 @@
 - JWT ( json Web Toke ) / Apis autenticadas
 - Dependency Injection (Singleton)
 - Linq C# para as Querys
+
+- Comando Migration
+  - Add-Migration Inicial -Context ContextBase
+  - Update-database -Context ContextBase
