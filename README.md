@@ -12,3 +12,5 @@
 - Comando Migration
   - Add-Migration Inicial -Context ContextBase
   - Update-database -Context ContextBase
+- Node Versão ( 18.17.1)
+- Angular Versão (16.2.1)
