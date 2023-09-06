@@ -16,4 +16,4 @@
 - Angular Versão (16.2.1)
 
 - Comandos 
- - ng g c pages/dashboard
+  - ng g c pages/dashboard
