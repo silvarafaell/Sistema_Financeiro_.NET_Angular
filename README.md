@@ -14,3 +14,6 @@
   - Update-database -Context ContextBase
 - Node Versão ( 18.17.1)
 - Angular Versão (16.2.1)
+
+- Comandos 
+ - ng g c pages/dashboard
