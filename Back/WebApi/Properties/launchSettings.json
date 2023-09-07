@@ -19,7 +19,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "https": {
+    "SistemaFinanceiro": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
