@@ -17,3 +17,5 @@
 
 - Comandos 
   - ng g c pages/dashboard
+  - ng g c components/navbar
+  - ng g c components/sidebar
