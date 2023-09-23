@@ -19,7 +19,7 @@ export class SistemaService {
     AdicionarSistemaFinanceiro(sistemaFinanceiro:SistemaFinanceiro)
     {
         return  this.httpClient.post<SistemaFinanceiro>(`${this.baseURL}/AdicionarSistemaFinanceiro`,
-        sistemaFinanceiro)
+        sistemaFinanceiro)      
     }
 
     ListaSistemasUsuario(emailUsuario:string)
