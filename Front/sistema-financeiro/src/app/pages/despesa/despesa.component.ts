@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SelectModel } from 'src/app/models/selectModel';
+import { Categoria } from 'src/app/models/Categoria';
+import { Despesa } from 'src/app/models/Despesa';
+import { SelectModel } from 'src/app/models/SelectModel';
+import { AuthService } from 'src/app/services/auth.service';
+import { CategoriaService } from 'src/app/services/categoria.service';
+import { DespesaService } from 'src/app/services/despesa.service';
 import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
@@ -9,7 +14,9 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./despesa.component.scss']
 })
 export class DespesaComponent {
-  constructor(public menuService: MenuService, public formBuilder: FormBuilder) {
+  constructor(public menuService: MenuService, public formBuilder: FormBuilder,
+             public despesaService : DespesaService,  public categoriaService : CategoriaService,
+             public authService : AuthService) {
   }
 
   listSistemas = new Array<SelectModel>();
@@ -18,6 +25,11 @@ export class DespesaComponent {
   
   listCategorias = new Array<SelectModel>();
   categoriaSelect = new SelectModel();
+
+  
+  color = 'accent';
+  checked = false;
+  disabled = false;
 
   despesaForm: FormGroup;
 
@@ -35,6 +47,8 @@ export class DespesaComponent {
           categoriaSelect: ['', [Validators.required]],
         }
       )
+
+      this.ListarCategoriasUsuario();
   }
 
   dadorForm() {
@@ -42,10 +56,48 @@ export class DespesaComponent {
   }
 
   enviar() {
-    debugger
     var dados = this.dadorForm();
 
-    alert(dados["name"].value)
+    let item = new Despesa();
+    item.Nome = dados["name"].value;
+    item.Id =0;
+    item.Valor = dados["valor"].value;
+    item.Pago = this.checked;
+    item.DataVencimento = dados["data"].value;
+    item.IdCategoria = parseInt(this.categoriaSelect.id);
+
+    this.despesaService.AdicionarDespesa(item)
+    .subscribe((response: Despesa) => {
+  
+      this.despesaForm.reset();
+     
+    }, (error) => console.error(error),
+      () => { })
+  }
+
+  handleChangePago(item: any) {
+    this.checked = item.checked as boolean;
+  }
+
+  ListarCategoriasUsuario() {
+     //correto é tirar o any do response e colocar o Despesa, ver depois
+    this.categoriaService.ListarCategoriasUsuario(this.authService.getEmailUser())
+      .subscribe((reponse: any[]) => {
+        var listaCatagorias = [];
+
+        reponse.forEach(x => {
+          var item = new SelectModel();
+          item.id = x.id.toString();
+          item.name = x.nome;
+          listaCatagorias.push(item);
+
+        });
+
+        this.listCategorias = listaCatagorias;
+
+      }
+
+      )
   }
 
 }

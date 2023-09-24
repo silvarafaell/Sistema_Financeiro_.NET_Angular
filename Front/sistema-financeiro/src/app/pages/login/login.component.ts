@@ -37,6 +37,7 @@ export class LoginComponent {
       .subscribe(
         (token) => {
           this.authService.setToken(token);
+          this.authService.setEmailUser(this.dadosForm['email'].value);
           this.authService.UsuarioAutenticado(true);
           this.router.navigate(['/dashboard']);
         },
