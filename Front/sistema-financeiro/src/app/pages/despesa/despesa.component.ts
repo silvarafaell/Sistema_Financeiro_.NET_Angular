@@ -80,15 +80,14 @@ export class DespesaComponent {
   }
 
   ListarCategoriasUsuario() {
-     //correto é tirar o any do response e colocar o Despesa, ver depois
     this.categoriaService.ListarCategoriasUsuario(this.authService.getEmailUser())
-      .subscribe((reponse: any[]) => {
+      .subscribe((reponse: Categoria[]) => {
         var listaCatagorias = [];
 
         reponse.forEach(x => {
           var item = new SelectModel();
-          item.id = x.id.toString();
-          item.name = x.nome;
+          item.id = x.Id.toString();
+          item.name = x.Nome;
           listaCatagorias.push(item);
 
         });

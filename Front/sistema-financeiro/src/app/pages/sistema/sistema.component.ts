@@ -46,12 +46,11 @@ export class SistemaComponent {
     item.MesCopia = 0;
     item.AnoCopia = 0;
 
-    //correto é tirar o any do response e colocar o SistemaFinanceiro, ver depois
     this.sistemaService.AdicionarSistemaFinanceiro(item)
-    .subscribe((response: any) => {
+    .subscribe((response: SistemaFinanceiro) => {
       this.sistemaForm.reset();
 
-      this.sistemaService.CadastrarUsuarioNoSistema(response.id, this.authService.getEmailUser())
+      this.sistemaService.CadastrarUsuarioNoSistema(response.Id, this.authService.getEmailUser())
       .subscribe((response: any) => {
       }, (error) => console.error(error), 
          () => {})
