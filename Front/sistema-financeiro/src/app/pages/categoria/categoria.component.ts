@@ -50,9 +50,8 @@ export class CategoriaComponent {
     item.IdSistema = parseInt(this.sistemaSelect.id);
     item.Id = 0;
 
-    //correto é tirar o any do response e colocar o SistemaFinanceiro, ver depois
     this.categoriaService.AdicionarCategoria(item)
-    .subscribe((response: any) => {
+    .subscribe((response: Categoria) => {
       this.categoriaForm.reset();
       
     },(error) => console.error(error), 
@@ -60,15 +59,14 @@ export class CategoriaComponent {
   }
 
   ListarSistemaUsuario() {
-    //correto é tirar o any do response: any e colocar o SistemaFinanceiro, ver depois
     this.sistemaService.ListaSistemasUsuario(this.authService.getEmailUser())
-      .subscribe((reponse: any[]) => {
+      .subscribe((reponse: SistemaFinanceiro[]) => {
         var lisSistemaFinanceiro = [];
 
         reponse.forEach(x => {
           var item = new SelectModel();
-          item.id = x.id.toString();
-          item.name = x.nome;
+          item.id = x.Id.toString();
+          item.name = x.Nome;
 
           lisSistemaFinanceiro.push(item);
 
