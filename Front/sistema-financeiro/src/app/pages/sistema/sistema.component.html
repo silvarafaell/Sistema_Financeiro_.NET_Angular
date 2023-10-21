@@ -5,9 +5,8 @@
 
     <div class="content-page">
         <div class="card-header">
-            <div class="card-title">
-                Cadastro de Sistemas
-            </div>
+            <div class="card-title"> Cadastro de Sistemas </div>
+            <div (click)="ListaSistemasUsuario()" class="card-menu"> Listagem de Sistemas </div>
         </div>
 
         <form class="form-page" [formGroup]="sistemaForm" (submit)="enviar()">
