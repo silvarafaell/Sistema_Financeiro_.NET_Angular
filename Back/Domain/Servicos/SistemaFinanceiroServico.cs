@@ -39,8 +39,10 @@ namespace Domain.Servicos
 
             if (valido)
             {
-                sistemaFinanceiro.DiaFechamento = 1;               
-                await _interfaceSistemaFinanceiro.Add(sistemaFinanceiro);
+                sistemaFinanceiro.DiaFechamento = 1;              
+                
+                await _interfaceSistemaFinanceiro.Update(sistemaFinanceiro);          
+                
             }
         }
     }
