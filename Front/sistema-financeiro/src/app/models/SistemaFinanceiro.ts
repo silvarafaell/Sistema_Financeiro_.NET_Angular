@@ -10,5 +10,5 @@ export class SistemaFinanceiro {
     
     NomePropriedade:string="";
     mensagem:string="";
-    notificacoes:[];
+    notificacoes:[] = [];
 }
