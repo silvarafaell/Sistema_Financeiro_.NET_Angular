@@ -110,22 +110,39 @@ export class CategoriaComponent {
   enviar() {
     var dados = this.dadorForm();
 
-    let item = new Categoria();
-    item.Nome = dados["name"].value;
-    item.IdSistema = parseInt(this.sistemaSelect.id);
-    item.Id = 0;
+    if(this.itemEdicao) {
+      this.itemEdicao.Nome = dados["name"].value;
+      this.itemEdicao.IdSistema = parseInt(this.sistemaSelect.id);
+      this.itemEdicao.NomePropriedade = "";
+      this.itemEdicao.mensagem = "";
+      this.itemEdicao.notificacoes = [];
 
-    this.categoriaService.AdicionarCategoria(item)
-    .subscribe((response: Categoria) => {
-      this.categoriaForm.reset();
-
-      this.ListarCategoriasUsuario();
-      
-    },(error) => console.error(error), 
-    () => {})
+      this.categoriaService.AtualizarCategoria(this.itemEdicao)
+      .subscribe((response: Categoria) => {
+        this.categoriaForm.reset();
+        this.ListarCategoriasUsuario();
+        
+      },(error) => console.error(error), 
+      () => {})
+    } 
+    else {
+      let item = new Categoria();
+      item.Nome = dados["name"].value;
+      item.IdSistema = parseInt(this.sistemaSelect.id);
+      item.Id = 0;
+  
+      this.categoriaService.AdicionarCategoria(item)
+      .subscribe((response: Categoria) => {
+        this.categoriaForm.reset();
+  
+        this.ListarCategoriasUsuario();
+        
+      },(error) => console.error(error), 
+      () => {})
+    }  
   }
 
-  ListarSistemaUsuario() {
+  ListarSistemaUsuario(id:number=null) {
     this.sistemaService.ListaSistemasUsuario(this.authService.getEmailUser())
       .subscribe((reponse: SistemaFinanceiro[]) => {
         var lisSistemaFinanceiro = [];
@@ -134,9 +151,11 @@ export class CategoriaComponent {
           var item = new SelectModel();
           item.id = x.Id.toString();
           item.name = x.Nome;
-
           lisSistemaFinanceiro.push(item);
 
+          if(id && id == x.Id) {
+            this.sistemaSelect = item;
+          }
         });
 
         this.listSistemas = lisSistemaFinanceiro;
@@ -144,6 +163,30 @@ export class CategoriaComponent {
       }
 
       )
+  }
+
+  itemEdicao: Categoria;
+
+  edicao(id: number) {
+    this.categoriaService.ObterCategoria(id)
+        .subscribe((response: Categoria) => {
+
+        if(response) {
+          this.itemEdicao = response;
+          this.tipoTela = 2;
+
+          var sistema = response;
+
+          var dados = this.dadorForm();
+          dados["name"].setValue(this.itemEdicao.Nome)
+          this.ListarSistemaUsuario(response.IdSistema);
+        }
+          
+      },
+      (error) => console.error(error),
+      () => {
+        
+      });
   }
 
 }
