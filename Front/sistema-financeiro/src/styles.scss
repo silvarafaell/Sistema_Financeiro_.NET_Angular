@@ -39,9 +39,6 @@ input {
   font-family: "Poppins";
 }
 
-label {
-}
-
 .error-input {
   font-size: 14px;
   color: red;
@@ -98,7 +95,7 @@ label {
 
     .form-page {
       display: grid;
-      justify-content: center;
+      //justify-content: center;
 
       .row {
         display: flex;
